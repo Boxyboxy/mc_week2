@@ -25,7 +25,7 @@ enum Creature {
 }
 
 impl Creature {
-    // 8. implement onto Creature
+// 8. implement onto Creature
  // 9. define magic_power function that takes in a referenced self and outputs unsigned 32bits integer
  // matches on itself
  // if its of variant Unicorn, return referenced unicorn's magic power
@@ -100,8 +100,8 @@ impl Creature {
 // 14. define creature_box function, takes in 1 referenced creature and returns box with an owned creature (lifetime!!)
  // return a box containing an owned creature by calling the clone function within the box
 fn creature_box<'a>(creature: &'a Creature) -> Box<Creature> {
- // return a box containing an owned creature by calling the clone function within the box
- Box::new(creature.clone())
+    // return a box containing an owned creature by calling the clone function within the box
+    Box::new(creature.clone())
 }
 
 

@@ -9,15 +9,15 @@ fn is_this_cash(input: String) -> Result<String, String> {
     }
 }
 fn main() {
- // create variable cash of type Option<String>, assign "cash"
- let cash = Some("cash".to_owned());
+// create variable cash of type Option<String>, assign "cash"
+let cash = Some("cash".to_owned());
 
- // create variable credit of type Option<String>, assign "credit"
- let credit = Some("credit".to_owned());
- // using if let on cash, bind variable within Some -> if let Some(x) = var_name {}
- // pass the binded variable into is_this_cash function and use match
- // if matches on OK, print "Output X", where X the value within OK
- // if matches on Err, print "Output X", where X the value within Err
+// create variable credit of type Option<String>, assign "credit"
+let credit = Some("credit".to_owned());
+// using if let on cash, bind variable within Some -> if let Some(x) = var_name {}
+// pass the binded variable into is_this_cash function and use match
+// if matches on OK, print "Output X", where X the value within OK
+// if matches on Err, print "Output X", where X the value within Err
 if let Some(input) = cash {
     match is_this_cash(input) {
         Ok(x) => println!("Output: {}", x),

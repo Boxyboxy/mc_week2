@@ -32,12 +32,12 @@ for (ticker, price) in stock_prices.iter().filter(|x| *x.1< 50){
    // both works: if *price < 50
    println!("{}", ticker);
 
-   // if *v < 50 {
-   //    println!("{}", k);
-   // }
-
-    
-
+}
+println!("+++++");
+for (ticker, price) in stock_prices.iter() {
+   if *price < 50 {
+      println!("{}", ticker);
+   }
 }
 
 

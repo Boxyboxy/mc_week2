@@ -6,9 +6,9 @@ mod transaction;
 use transaction::*;
 
 enum TransactionType {
- Withdrawal,
- Deposit,
- Transfer,
+    Withdrawal,
+    Deposit,
+    Transfer,
 }
 fn main() {
     let transaction = TransactionType::Withdrawal;
