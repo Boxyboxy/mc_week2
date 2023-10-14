@@ -6,27 +6,39 @@ fn main() {
  // todo: Save the values into a new vector called vec_even
  // todo: print vec_even
 
- let mut iterator = vec.iter();
- let vec_even: Vec<i32> = iterator.filter(|x| **x>5)
+
+// .iter() returns a &
+// .into_inter() takes ownership of the values in vector
+let mut iterator = vec.iter();
+ 
+// iter returns a reference type variable, filter returns a reference type variable, therefore the chaining of both leads to a double reference value
+//  let vec_even: Vec<i32> = iterator.filter(|&&x| x> 5)
+//  let vec_even: Vec<i32> = iterator.filter(|x| x> &&5)
+let vec_even: Vec<i32> = iterator.filter(|x| **x> 5)
     .map(|num| num *2).collect();
 
- println!("{:?}", vec_even);
+println!("{:?}", vec_even);
 
- let mut stock_prices = HashMap::new();
- stock_prices.insert("TSLA", 20);
- // todo: insert a few more stock_prices, less or more than 50 dollars
- // todo: use a for loop to print out the name of each stock that costs less than 50 dollars
- stock_prices.insert("JPM", 51);
- stock_prices.insert("BLK", 49);
- stock_prices.insert("AAPL", 100);
- stock_prices.insert("GOOGL", 30);
+let mut stock_prices = HashMap::new();
+stock_prices.insert("TSLA", 20);
+// todo: insert a few more stock_prices, less or more than 50 dollars
+// todo: use a for loop to print out the name of each stock that costs less than 50 dollars
+stock_prices.insert("JPM", 51);
+stock_prices.insert("BLK", 49);
+stock_prices.insert("AAPL", 100);
+stock_prices.insert("GOOGL", 30);
  
- for (ticker, price) in stock_prices.iter(){
-    // both works: if *price < 50
-    if price < &50 {
-        println!("{}", ticker);
-    }
- }
+for (ticker, price) in stock_prices.iter().filter(|x| *x.1< 50){
+   // both works: if *price < 50
+   println!("{}", ticker);
+
+   // if *v < 50 {
+   //    println!("{}", k);
+   // }
+
+    
+
+}
 
 
 

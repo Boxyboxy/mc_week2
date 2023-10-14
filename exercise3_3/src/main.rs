@@ -13,6 +13,9 @@ struct NonFiction {
     topic: String,
 }
 
+fn print_book_summary<T:Book>(x:T){
+    x.get_summary();
+}
 
 // create a trait Book
 trait Book {
@@ -33,7 +36,6 @@ impl Book for NonFiction {
     fn get_summary(&self) {
         println!("{} is a {} written by {}", self.title, self.topic, self.author);
     }
-    
 }
  // define fuction wihch takes in a generic that that implements Book trait
  // call get_summary with the book
@@ -54,4 +56,5 @@ let book_2 = NonFiction {
  book_1.get_summary();
  // call print_book_summary with book_2
  book_2.get_summary();
+ print_book_summary(book_2);
 }
